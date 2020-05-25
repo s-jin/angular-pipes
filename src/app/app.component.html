@@ -1,0 +1,65 @@
+<div class="container">
+  <h3>Payment form</h3>
+  <div class="row">
+    <div class="form-group col">
+      <label>Payee Name</label>
+      <input class="form-control" (input)="onNameChange($event.target.value)"/>
+    </div>
+
+    <div class="col">
+      <label><b>Name</b></label>
+      <div>
+        {{name| titlecase}}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Payment Date</label>
+      <input type="date" class="form-control" (input)="onDateChange($event.target.value)"/>
+    </div>
+
+    <div class="col">
+      <label><b>Payment Date</b></label>
+      <div>
+        {{date| date: "MMMM d, yyyy"}}
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="form-group col">
+      <label>Amount</label>
+      <input class="form-control" (input)="onAmountChange($event.target.value)"/>
+    </div>
+
+    <div class="col">
+      <label><b>Amount</b></label>
+      <div>
+        {{amount|currency}}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Miles</label>
+      <input class="form-control" (input)="onMilesChange($event.target.value)"/>
+    </div>
+
+    <div class="col">
+      <label><b>Kilometers</b></label>
+      <div>
+        {{miles | convert: 'm'|number: '1.0-2'}}
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
